@@ -18,6 +18,13 @@ class BERT(nn.Module):
         drop_prob: float = 0.1,
     ) -> None:
         super(BERT, self).__init__()
+        self.d_model = d_model
+        self.d_hidden = d_hidden
+        self.vocab_size = vocab_size
+        self.max_len = max_len
+        self.n_layers = n_layers
+        self.n_heads = n_heads
+        self.num_segments = num_segments
         # embedding layer
         self.embedding = BERTEmbedding(
             vocab_size=vocab_size,
